@@ -59,7 +59,7 @@ PCA结果如下：
 
 ### 3.2 关联分析
 
-使用TASSEL将VCF格式转换为Hapmap，作为GAPIT的输入。选择混合线性模型（MLM），保留前六个主成分控制群体结构。结果如下：
+使用TASSEL将VCF格式转换为Hapmap，作为GAPIT的输入。选择混合线性模型（MLM），保留前六个主成分控制群体结构，p-value阈值取0.05，bonferroni矫正。结果如下：
 
 ![image](figs/mht_withQQ.jpg)
 
