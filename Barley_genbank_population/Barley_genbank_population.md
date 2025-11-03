@@ -19,7 +19,7 @@
 
 PCA结果如下：
 
-![image](Barley_genbank_population/figs/PCA_all.jpg)
+![image](figs/PCA_all.jpg)
 
 `NE`：北欧；`WE`：西欧；`FE`：远东；`CA`：中亚；`ME`：中东；`AP`：阿拉伯半岛；`NA`：北非；`ETH`：埃塞俄比亚。
 
