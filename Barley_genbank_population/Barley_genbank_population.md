@@ -27,15 +27,15 @@ PCA结果如下：
 
 使用`Admixture`进行了祖先成分分析。结果大致与PCA一致。在K=7时有最多的材料有确定的祖先成分（Qmax > 0.7）。而在K=12时有最低的CV-Error。祖先成分分析的结果还表明，北非材料（`NA`）虽与埃塞俄比亚材料（`ETH`）地理接近，但是其遗传背景更接近西欧（`WE`）；阿拉半岛材料（`AP`）虽与中东（`ME`）地理接近，但是其遗传背景更接近埃塞俄比亚（`ETH`）。
 
-![image](Barley_genbank_population/figs/admixture.jpg)
+![image](figs/admixture.jpg)
 
 选取K=12时Qmax > 0.7的材料重新绘制PCA结果，亚群分划程度有所改善，暗示了混血材料的存在，不过如前所述作者并未对混血材料加以处理。
 
-![image](Barley_genbank_population/figs/PCA_all_pure.jpg)
+![image](figs/PCA_all_pure.jpg)
 
 使用PopLDdecay统计LD衰减，结果表明中东种质有最高的遗传多样性，这与其作为大麦的起源地的事实是相符的。
 
-![image](Barley_genbank_population/figs/LD)
+![image](figs/LD)
 
 由于是GBS简化测序，标记密度较低，使用滑窗取平均的方式绘制的拟合线波动仍然很大，可视化效果不好，还需要改进。
 
@@ -51,7 +51,7 @@ PCA结果如下：
 
 将作者提供的表型数据进行整理（`score_data_transfm.R`）后考察其分布：
 
-![image](Barley_genbank_population/figs/MMV+VMV_distr.jpg)
+![image](figs/MMV+VMV_distr.jpg)
 
 可见两种病毒抗性均不是典型的连续分布，而是更接近离散分布的二分类变量，尤其是MMV。这表明性状是由少数主效基因控制的质量性状，或者是“阈值”型的性状。作者在文章中使GAPIT的混合线性模型进行关联分析，而对于二分类变量，线性回归的功效较差，应该考虑基于逻辑回归的关联分析模型。不过考虑到抗病基因克隆实践关注的正是主效基因，加上该研究样本量相当大，所以并无大碍。
 
@@ -61,7 +61,7 @@ PCA结果如下：
 
 使用TASSEL将VCF格式转换为Hapmap，作为GAPIT的输入。选择混合线性模型（MLM），保留前六个主成分控制群体结构。结果如下：
 
-![image](Barley_genbank_population/figs/mht_withQQ.jpg)
+![image](figs/mht_withQQ.jpg)
 
 在3号和4号染色体上各检测到一个峰。分别对应着此前已报导的两个抗病位点。该结果与原文一致。
 
@@ -69,4 +69,4 @@ PCA结果如下：
 
 使用LDPlotShow绘制关联位点附近的局部LD block。结果如下。可见一方面由于是GBS测序，SNP密度较低；另一方面关联位点附近LD水平很高（这与前人文献估计的低重组率是一致的。），导致候选区间相当宽，包含数十个基因。如果需要从头克隆这两个抗病基因，需要结合精细定位。
 
-![image](Barley_genbank_population/figs/LD_blk.png)
+![image](figs/LD_blk.png)
